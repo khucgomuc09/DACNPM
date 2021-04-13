@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {
+	margin: 10px 0 0 20px;
+	padding: 0;
+}
+
+.row .label {
+	text-align: right;
+}
+
+.title {
+	margin-left: 30%;
+}
