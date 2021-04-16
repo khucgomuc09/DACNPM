@@ -16,9 +16,11 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Crimson+Text:300,400,700|Rubik:300,400,700,900"
 	rel="stylesheet">
-<link rel="stylesheet" href="css/styles-merged.css">
-<link rel="stylesheet" href="css/style.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../../css/styles-merged.css">
+<link rel="stylesheet" href="../../css/style.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
 <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -89,11 +91,10 @@
 				<!-- items -->
 				<c:forEach var="room" items="${listRoom}" varStatus="loop">
 
-
 					<div class="col-md-4 col-sm-6 col-xs-12" style="height: 495.5px">
 						<div class="probootstrap-room">
-							<a href="#"><img src="${room.image}"
-								style="width: 400px;height: 195px; object-fit: cover;"
+							<a href="/roomdetail/${room.id}"><img src="${room.image}"
+								style="width: 400px; height: 195px; object-fit: cover;"
 								alt="Free Bootstrap Template by uicookies.com"
 								class="img-responsive"></a>
 							<div class="text">
@@ -114,6 +115,38 @@
 							</div>
 						</div>
 					</div>
+
+
+
+					<!-- -->
+					<!-- 
+					<div class="container_card_view">
+						<div class="card" style="width: 20rem">
+							<img class="card-img-top" src="${room.image}"
+								alt="Card image cap" />
+							<div class="card-body">
+								<h6 class="card-title">${room.title}</h6>
+								<p class="card-text">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>address:
+									${room.address}
+								</p>
+							</div>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item list-group-item-1">
+									${room.price} Triệu/Tháng</li>
+								<li class="list-group-item list-group-item-2">area:
+									${room.area} m<sup>2</sup>
+								</li>
+							</ul>
+							<div class="card-body card-body-link">
+								<a href="#" class="card-link">Liên hệ</a> <a href="#"
+									class="card-link">Xem chi tiết</a>
+							</div>
+						</div>
+
+					</div>
+ -->
+
 				</c:forEach>
 			</div>
 		</div>
