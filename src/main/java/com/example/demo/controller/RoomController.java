@@ -1,17 +1,19 @@
 package com.example.demo.controller;
 
-import javax.transaction.Transactional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.entities.Room;
 import com.example.demo.service.RoomService;
 
 @Controller
-@Transactional
 public class RoomController {
 	@Autowired
 	private RoomService roomservice;
@@ -30,17 +32,36 @@ public class RoomController {
 //		return "insert";
 //	}
 //
-	@GetMapping("/")
-	public String getRoom(ModelMap model) {
-		model.addAttribute("listRoom", roomservice.getAllRoom());
-		return "room";
-	}
 
+//	@GetMapping("/")
+//	public String getRoom(ModelMap model) {
+//		model.addAttribute("listRoom", roomservice.getAllRoom());
+//		return "room";
+//	}
 
 	@GetMapping("/roomdetail/{id}")
 	public String getRoomByID(@PathVariable("id") int id, ModelMap modelMap) {
 		modelMap.addAttribute(roomservice.getRoomById(id));
-		return "roomdetail";
+		return "RoomDetails";
+	}
+
+	@GetMapping("/")
+	public String getRoom(@RequestParam(required = false, defaultValue = "") String keywords, ModelMap modelMap) {
+		if (roomservice.getRoomByKeyWords(keywords).size() > 0) {
+
+		modelMap.addAttribute("listRoom", roomservice.getRoomByKeyWords(keywords));
+
+			System.out.println(roomservice.getRoomByKeyWords(keywords).get(0).getTitle());
+		} else {
+			modelMap.addAttribute("listRoom",roomservice.getAllRoom());
+		}
+		return "index";
+	}
+
+	@GetMapping("/room/{keyword}")
+	@ResponseBody
+	public List<Room> getRoom(@PathVariable("keyword") String keyword) {
+		return roomservice.getRoomByKeyWords(keyword);
 	}
 
 }

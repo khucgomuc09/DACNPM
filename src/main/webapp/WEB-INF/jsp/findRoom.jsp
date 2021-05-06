@@ -19,8 +19,6 @@
 <link rel="stylesheet" href="../../css/styles-merged.css">
 <link rel="stylesheet" href="../../css/style.min.css">
 <link rel="stylesheet" href="../../css/style.css">
-<link rel="stylesheet" href="../../css/styleheader.css" />
-<link rel="stylesheet" href="../../css/headerfooter.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
@@ -30,27 +28,24 @@
     <![endif]-->
 </head>
 <body>
-	<!-- 
-	<ul id="listitems">
+	<input id="search" list="roor" type="search">
+	<datalist id="roor">
 
-	</ul>
- -->
-	<jsp:include page="header.jsp"></jsp:include>
+	</datalist>
 	<section class="probootstrap-section">
 		<div class="container">
-			<div class="row row-flex row-flex-wrap">
+			<div class="row">
 				<!-- items -->
 				<c:forEach var="room" items="${listRoom}" varStatus="loop">
 
 					<div class="col-md-4 col-sm-6 col-xs-12" style="height: 495.5px">
-						<div class="probootstrap-room flex-col">
-							<a href="/roomdetail/${room.id}"><img
-								src="../../img/${room.image}"
+						<div class="probootstrap-room">
+							<a href="/roomdetail/${room.id}"><img src="${room.image}"
 								style="width: 400px; height: 195px; object-fit: cover;"
 								alt="Free Bootstrap Template by uicookies.com"
 								class="img-responsive"></a>
-							<div class="text flex-col">
-						//		<h3 style="max-height: 90px; overflow: hidden">${room.title}</h3>
+							<div class="text">
+								<h3 style="max-height: 90px; overflow: hidden">${room.title}</h3>
 								<p>
 									Starting from <strong>${room.price}</strong>
 								</p>
@@ -84,39 +79,24 @@
 		</nav>
 
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
 
 	<!-- END: footer -->
 
 	<script src="../../js/scripts.min.js"></script>
 	<script src="../../js/main.min.js"></script>
-
-
-
+	<script type="text/javascript">
+		
+	</script>
+	<!--  
+	<script src="../../js/custom.js"></script>
+	  -->
 
 
 	<!-- JS Files -->
-	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="../../js/jquery-3.6.0.js"></script>
 	<script src="../../js/popper.min.js"></script>
 	<script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/plugins.js"></script>
 	<script src="../../js/active.js"></script>
-
-	<script src="../../js/custom.js"></script>
-	<!-- 
-	<script type="text/javascript">
-		$("#search")
-				.keypress(
-						function(event) {
-							if (event.keycode == 13 || event.which == 13) {
-								window.location.href = "http://localhost:8080/?keywords="
-										+ $("#search").val();
-								console.log("http://localhost:8080/?keywords="
-										+ $("#search").val());
-							}
-						})
-	</script>
-	-->
-
 </body>
 </html>

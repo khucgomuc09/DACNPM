@@ -27,8 +27,11 @@ public class Room implements Serializable {
 	private int price;
 	private String contact;
 	private String detailed_description;
+	private int number_bedroom;
+	private int number_bathroom;
 	private int status;
 	private int active;
+	private int id_render;
 
 	public int getId() {
 		return id;
@@ -94,6 +97,22 @@ public class Room implements Serializable {
 		this.detailed_description = detailed_description;
 	}
 
+	public int getNumber_bedroom() {
+		return number_bedroom;
+	}
+
+	public void setNumber_bedroom(int number_bedroom) {
+		this.number_bedroom = number_bedroom;
+	}
+
+	public int getNumber_bathroom() {
+		return number_bathroom;
+	}
+
+	public void setNumber_bathroom(int number_bathroom) {
+		this.number_bathroom = number_bathroom;
+	}
+
 	public int getStatus() {
 		return status;
 	}
@@ -108,6 +127,14 @@ public class Room implements Serializable {
 
 	public void setActive(int active) {
 		this.active = active;
+	}
+
+	public int getId_render() {
+		return id_render;
+	}
+
+	public void setId_render(int id_render) {
+		this.id_render = id_render;
 	}
 
 	@Override

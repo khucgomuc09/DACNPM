@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,20 @@ public class RoomService {
 		session.getTransaction().begin();
 		@SuppressWarnings("unchecked")
 		List<Room> rooms = session.createQuery("from room").list();
+		session.getTransaction().commit();
+
+		return rooms;
+	}
+
+	public List<Room> getRoomByKeyWords(String keywords) {
+		Session session = factory.getCurrentSession();
+		session.getTransaction().begin();
+		String hql = "from room where lower(title) like :mykey or lower(address) like :mykey or lower(area) like :mykey or lower(price) like :mykey";
+		@SuppressWarnings({ "unchecked" })
+		Query<Room> query = session.createQuery(hql);
+		query.setParameter("mykey", "%" + keywords + "%");
+		List<Room> rooms = query.getResultList();
+		System.out.println(query.getQueryString());
 		session.getTransaction().commit();
 
 		return rooms;
