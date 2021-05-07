@@ -8,6 +8,9 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.current_session_context_class">thread</property>
+
+
 		<mapping class="com.example.demo.entities.Room" />
+		<mapping class="com.example.demo.entities.User" />
 	</session-factory>
 </hibernate-configuration>

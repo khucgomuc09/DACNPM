@@ -1,3 +1,5 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- HEADER ------------------------------------------------------------------------- -->
 <nav class="nav_bar">
 	<div>
@@ -11,7 +13,7 @@
 		<!-- FORM SEARCH -->
 		<form class="input-group form_search" method="get" action="/">
 			<input class="form-control search_bar fixed-top" type="search"
-				placeholder="ban can tim gi?" name="keywords" id="tags" />
+				placeholder="Bạn cần tìm gì?" name="keywords" id="tags" />
 			<div class="input-group-append">
 				<button id="btnSearch" class="btn btn-outline-primary" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
@@ -22,11 +24,11 @@
 
 	<div class="">
 		<ul class="nav">
-			<li class="nav-item"><a class="nav-link" href="#">Thong bao</a>
+			<li class="nav-item"><a class="nav-link" href="#">Thông báo</a>
 			</li>
 			<li class="nav-item"><a class="nav-link disabled" href="#">AccountName</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="#">Dang nhap</a>
+			<li class="nav-item"><a class="nav-link" href="login">Đăng nhập</a>
 			</li>
 		</ul>
 	</div>
@@ -37,38 +39,37 @@
 	<div class="">
 		<ul class="navbar-nav list_filter">
 			<li class="nav-item"><a class="filter_label" href="#"> <i
-					class="fa fa-filter" aria-hidden="true"></i> Loc theo:
+					class="fa fa-filter" aria-hidden="true"></i> Lọc theo:
 			</a></li>
 			<li class="nav-item"><select name="calc_shipping_provinces"
 				class="custom-select" required="">
-					<option value="">Tinh/ thanh pho</option>
+					<option value="">Tỉnh/ thành phố</option>
 			</select></li>
 			<li class="nav-item"><select name="calc_shipping_district"
 				class="custom-select" required="">
-					<option value="">Quan huyen</option>
+					<option value="">Quận huyện</option>
 			</select></li>
 			<li class="nav-item"><select class="custom-select">
-					<option selected>Muc Gia</option>
+					<option selected>Mức Giá</option>
 					<option value="1">< 1tr</option>
 					<option value="2">< 2tr</option>
 					<option value="3">< 3tr</option>
 			</select></li>
 			<li class="nav-item"><select class="custom-select">
-					<option selected>Dien Tich</option>
+					<option selected>Diện tích</option>
 					<option value="1">One</option>
 					<option value="2">Two</option>
 					<option value="3">Three</option>
 			</select></li>
 
 			<li class="nav-item">
-				<button class="btn btn-outline-success" type="submit">Tim
-					kiem</button>
+				<button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
 			</li>
 		</ul>
 	</div>
 	<div>
 		<button type="button" class="btn btn-warning">
-			<i class="fa fa-plus" aria-hidden="true"></i> dang tin
+			<i class="fa fa-plus" aria-hidden="true"></i> Đăng tin
 		</button>
 	</div>
 </nav>
